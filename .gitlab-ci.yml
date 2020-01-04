@@ -1,0 +1,35 @@
+variables:
+  DOCKER_TLS_CERTDIR: ""
+  IMAGE_NAME: "php"
+  IMAGE_TEST_TAG: "7.2-fpm-mysqli"
+  IMAGE_MASTER_TAG: "latest"
+
+# This file is a template, and might need editing before it works on your project.
+docker-build-master:
+  # Official docker image.
+  image: docker:19.03.1
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASSWORD"
+  script:
+    - docker build --pull -t "$REGISTRY_USER/$IMAGE_NAME:$IMAGE_MASTER_TAG" .
+    - docker push "$REGISTRY_USER/$IMAGE_NAME:$IMAGE_MASTER_TAG"
+  only:
+    - master
+
+docker-build:
+  # Official docker image.
+  image: docker:19.03.1
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
+  script:
+    - echo "$IMAGE_NAME:$IMAGE_TEST_TAG" 
+    - docker build --pull -t "$REGISTRY_USER/$IMAGE_NAME:$IMAGE_TEST_TAG" .
+    - docker push "$REGISTRY_USER/$IMAGE_NAME:$IMAGE_TEST_TAG"
+  except:
+    - master
