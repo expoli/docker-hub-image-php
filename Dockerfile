@@ -8,7 +8,7 @@ RUN apt-get update \
         libpng-dev \
         libgd-dev \
         libzip-dev
-RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ --with-png=/usr/include/ && \
+RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
 docker-php-ext-install \
 gd \
 mysqli \
