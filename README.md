@@ -1,5 +1,5 @@
 # docker-hub-image-php
-
+[![Docker Pulls](https://img.shields.io/docker/pulls/tangcuyu/php.svg?style=plastic)](https://hub.docker.com/r/tangcuyu/php)
 ## Dockerfile
 
 ```Dockerfile
