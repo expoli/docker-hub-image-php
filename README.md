@@ -1,5 +1,15 @@
+<p align = "center">
+Docker-hub-image-php
+<br><br>
+<img src="https://img.shields.io/docker/cloud/automated/tangcuyu/php?style=flat-square">
+<img src="https://img.shields.io/docker/cloud/build/tangcuyu/php?style=flat-square">
+<img src="https://img.shields.io/docker/pulls/tangcuyu/php.svg?style=flat-square">
+<img src="https://img.shields.io/docker/v/tangcuyu/php?sort=date&style=flat-square">
+<img alt="Docker Image Version (latest semver)" src="https://img.shields.io/docker/v/tangcuyu/php?sort=semver&style=flat-square">
+</p>
+
 # docker-hub-image-php
-[![Docker Pulls](https://img.shields.io/docker/pulls/tangcuyu/php.svg?style=plastic)](https://hub.docker.com/r/tangcuyu/php)
+
 ## Dockerfile
 
 ```Dockerfile
