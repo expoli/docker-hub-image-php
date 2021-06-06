@@ -7,7 +7,7 @@ variables:
 # This file is a template, and might need editing before it works on your project.
 docker-build-master:
   # Official docker image.
-  image: docker:19.03.15
+  image: docker:20.10.7
   stage: build
   services:
     - docker:dind
@@ -21,7 +21,7 @@ docker-build-master:
 
 docker-build:
   # Official docker image.
-  image: docker:19.03.15
+  image: docker:20.10.7
   stage: build
   services:
     - docker:dind
